@@ -10,12 +10,12 @@ url = "https://cringemdb.com/"
 
 class SearchMovies(unittest.TestCase):
 
-    def setUp(self, browser="chrome"):
-        if browser == "chrome":
+    def setUp(self, browser="ff"):
+        if browser == "chrome" or browser == "ch":
             self.driver = webdriver.Chrome(executable_path=r'../Drivers/ChromeDrive_75/chromedriver.exe')
             self.driver.maximize_window()
             self.driver.get(url)
-        elif browser == "mozilla":
+        elif browser == "mozilla" or browser == "ff":
             self.driver = webdriver.Firefox(executable_path=r'../Drivers/FirefoxDrive_24/geckodriver.exe')
             self.driver.maximize_window()
             self.driver.get(url)
@@ -32,12 +32,12 @@ class SearchMovies(unittest.TestCase):
 
     def test_Search_Movies(self):
         searchMovies = self.driver.find_element_by_id("autocomplete")
-        searchMovies.send_keys("Saw")
+        searchMovies.send_keys("Wrong Turn")
         searchMovie = WebDriverWait(self.driver, 100).until(
-            EC.element_to_be_clickable((By.XPATH, "//ul[starts-with(@id, 'ui-id-1')]//a[contains(text(),'Saw (2004)')]")))
+            EC.element_to_be_clickable((By.XPATH, "//ul[starts-with(@id, 'ui-id-1')]//a[contains(text(),'Wrong Turn 2: Dead End (2007)')]")))
         searchMovie.click()
         print(self.driver.find_element_by_class_name("title").text)
-        assert self.driver.find_element_by_class_name("title").text == "Saw (2004)"
+        assert self.driver.find_element_by_class_name("title").text == "Wrong Turn 2: Dead End (2007)"
 
 
 
