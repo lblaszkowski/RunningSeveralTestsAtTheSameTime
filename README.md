@@ -3,6 +3,9 @@
 
 Mini projekt zawiera - uruchomienie kilku testów jednocześnie.Uruchomienie kilku testów jednocześnie w konsoli 
 
+Wersja Pythona:
+- Python 3.7
+
 Projekt zawiera biblioteki:
 - py.test
 - py.test-xdist
