@@ -1,7 +1,7 @@
 # RunningSeveralTestsAtTheSameTime
 
 
-Mini projekt zawiera - uruchomienie kilku testów jednocześnie.Uruchomienie kilku testów jednocześnie w konsoli 
+Mini projekt zawiera - uruchomienie kilku testów jednocześnie przez konsole 
 
 Wersja Pythona:
 - Python 3.7
